@@ -4,16 +4,17 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    let res = [];
+    let res = {};
 
-    for(let i = 0; i < nums.length - 1; i++) {
-        for(let j = 0; j < nums.length; j++) {
-            if (i != j) {
-                if(nums[i] + nums[j] === target) {
-                res.push(i, j)
-                return res
-                }
-            }
+    for(let i = 0; i < nums.length; i++) {
+        let num = nums[i];
+        let difference = target - num;
+        if (difference in res) {
+            return [i, res[difference]]
+        }else {
+            res[num] = i;
+            continue
         }
     }
+    // return res;
 };
