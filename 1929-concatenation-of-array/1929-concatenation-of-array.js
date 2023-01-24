@@ -4,5 +4,5 @@
  */
 var getConcatenation = function(nums) {
     let copy = [...nums]
-    return [...nums, ...copy]
+    return [...nums, ...nums]
 };
