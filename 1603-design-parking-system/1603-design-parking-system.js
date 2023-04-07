@@ -24,8 +24,6 @@ ParkingSystem.prototype.addCar = function(carType) {
     }
     if(carType === 3 && this.small) {
         this.small -= 1;
-        console.log('this', this.small);
-        console.log('car', carType)
         return true;
     }else {
         return false;
