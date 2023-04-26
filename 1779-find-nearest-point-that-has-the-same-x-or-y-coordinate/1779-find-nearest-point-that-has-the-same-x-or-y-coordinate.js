@@ -5,7 +5,6 @@
  * @return {number}
  */
 var nearestValidPoint = function(x, y, points) {
-    let obj = {};
     let min = Infinity;
     let ind = -1;
     
