@@ -26,5 +26,5 @@ var captureForts = function(forts) {
     return max === 0 ? max : max - 1;
 };
 
-console.log(captureForts([0,-1,-1,0,-1]))
+// console.log(captureForts([0,-1,-1,0,-1]))
 //2
