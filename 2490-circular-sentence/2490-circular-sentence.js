@@ -3,25 +3,16 @@
  * @return {boolean}
  */
 var isCircularSentence = function(sentence) {
-    let splitSentence = sentence.split(' ')
-    if(splitSentence.length < 2) {
-        return splitSentence[0][0] === splitSentence[0][splitSentence[0].length - 1] ? true : false;
-    };
-
-    let i = 0; 
-    let j = 1;
-    let first;
-    let last;
+    let splitted = sentence.split(' ');
+    let last = splitted[splitted.length - 1]
+    if(splitted[0][0] !== last[last.length - 1]) return false;
     
-    while(j <= splitSentence.length - 1) {
-        first = splitSentence[i].split('');
-        last = splitSentence[j].split('')
-
-        if(first[first.length - 1] !== last[0]) return false;
-        
-        i++;
-        j++;
+    for(let i = 0; i < splitted.length - 1; i++) {
+        let curr = splitted[i];
+        let next = splitted[i + 1];
+        // console.log(curr, next)
+        if(curr[curr.length - 1] !== next[0]) return false;
     };
     
-    return last[last.length - 1] === splitSentence[0][0] ? true : false;
+    return true;
 };
