@@ -10,13 +10,14 @@
  * @return {number}
  */
 var getDecimalValue = function(head) {
-    let string = '';
     let curr = head
+    let binary = '';
     
     while(curr) {
-        string += `${curr.val}`;
+        let val = curr.val;
+        binary += val.toString();
         curr = curr.next;
     };
-
-    return parseInt(string, 2)
+    
+    return parseInt(binary, 2);
 };
